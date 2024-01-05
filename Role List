@@ -1,4 +1,4 @@
-# Second Task: Create a new user via an API endpoint
+# Third Task: Get the room information via an API endpoint
 ##The requested API call was done by:
 
 curl -H "X-Auth-Token: O0HcAldqNR3S14H6PwK1PGExLoQ2W_GAo24htPB8pcA" \\
