@@ -1,0 +1,32 @@
+# The second API Call was done, requesting this API:
+
+curl -H "X-Auth-Token: O0HcAldqNR3S14H6PwK1PGExLoQ2W_GAo24htPB8pcA" \
+     -H "X-User-Id: PysTx5GgxAQ9pbetr" \
+     http://localhost:3000/api/v1/rooms.info?roomName=Teste
+
+# The respone was:
+
+{
+  "room": {
+    "_id": "65988a2dc35a7b10f929d241",
+    "fname": "Teste",
+    "_updatedAt": "2024-01-05T23:01:01.438Z",
+    "customFields": {},
+    "topic": "",
+    "broadcast": false,
+    "encrypted": false,
+    "name": "Teste",
+    "t": "c",
+    "msgs": 0,
+    "usersCount": 1.
+    "u": {
+      "_id": "PysTx5GgxAQ9pbetr",
+      "username": "gsauer",
+      "name": "Gabriel André Sauer"
+    },
+    "ts": 2024-04-05T23:01:01.401z",
+    "ro": false
+    "default": false,
+    "sysMes": true
+  },
+  "success": true
