@@ -1,0 +1,42 @@
+# First Task: Create a new user via an API endpoint
+##The requested API call was done by:
+
+curl -H "X-Auth-Token: O0HcAldqNR3S14H6PwK1PGExLoQ2W_GAo24htPB8pcA" \
+     -H "X-User-Id: PysTx5GgxAQ9pbetr" \
+     -H "Content-type:application/json" \
+     http://localhost:3000/api/v1/rooms.info \
+     -d '{
+          "name": "Teste12", 
+          "email": "teste1@user.tld", 
+          "password": "teste1234", 
+          "username": "teste12", 
+          "roles":["bot","user"]}'
+
+#The result was an Success: true response:
+
+{
+  "users": {
+    "_id": "MNPsGiFTmjSsXXQ4x"
+    "createdAt": "2024-01-05T22:56:45.256Z" ,
+    "username": "teste12"
+    "emails": [
+       {
+          "address": teste1@user.tld",
+          "verified": false
+       }
+      ] ,
+      "type": "users" ,
+      "roles": [
+          "bot"
+          "user"
+        ] ,
+        "status": "offline",
+        "active": true,
+        "_updatedAt": "2024-01-05T22:56:45.327Z",
+        "__rooms": [
+          "GENERAL"
+        ],
+        "name": "Teste",
+        "settings": {}
+},
+"success": true
