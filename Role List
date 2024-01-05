@@ -1,109 +1,79 @@
 # Third Task: Get a list of all user roles in the system via an API endpoint
 ##The requested API call was done by:
 
-curl -H "X-Auth-Token: O0HcAldqNR3S14H6PwK1PGExLoQ2W_GAo24htPB8pcA" \\
+curl -H "X-Auth-Token: O0HcAldqNR3S14H6PwK1PGExLoQ2W_GAo24htPB8pcA" \
      -H "X-User-Id: PysTx5GgxAQ9pbetr" \
-     http://localhost:3000/api/v1/roles.list
+     http://localhost:3000/api/v1/roles.getUsersInRole
 
 #The response of API Call was:
 
-{
-  "roles": [
+  "success": false,
+  "error": "Query param \"role\" is required [error-param-not-provided]",
+  "errorType": "error-param-not-provided"
+
+The documentation looks like outdated.
+
+The right way that I have found was checking this GIT (https://github.com/RocketChat/Rocket.Chat/issues/4839):
+
+Requested: curl -H "X-Auth-Token: O0HcAldqNR3S14H6PwK1PGExLoQ2W_GAo24htPB8pcA"      -H "X-User-Id: PysTx5GgxAQ9pbetr"      http://localhost:3000/api/v1/users.list
+
+And response was:
+
+ "users": [
     {
-      "_id": "admin",
-      "scope": "Users",
-      "description": "Admin",
-      "mandatory2fa": false,
-      "name": "admin",
-      "protected": true
+      "_id": "PysTx5GgxAQ9pbetr",
+      "emails": [
+        {
+          "address": "sauer995@gmail.com",
+          "verified": false
+        }
+      ],
+      "type": "user",
+      "roles": [
+        "user",
+        "admin"
+      ],
+      "status": "offline",
+      "active": true,
+      "name": "Gabriel André Sauer",
+      "lastLogin": "2024-01-05T23:00:22.732Z",
+      "username": "gsauer",
+      "nameInsensitive": "gabriel andré sauer"
     },
     {
-      "_id": "moderator",
-      "scope": "Subscriptions",
-      "description": "Moderator",
-      "mandatory2fa": false,
-      "name": "moderator",
-      "protected": true
+      "_id": "rocket.cat",
+      "name": "Rocket.Cat",
+      "username": "rocket.cat",
+      "status": "online",
+      "active": true,
+      "type": "bot",
+      "roles": [
+        "bot"
+      ],
+      "avatarETag": "jXHhBJNe7XXMD9arT",
+      "nameInsensitive": "rocket.cat"
     },
     {
-      "_id": "leader",
-      "scope": "Subscriptions",
-      "description": "Leader",
-      "mandatory2fa": false,
-      "name": "leader",
-      "protected": true
-    },
-    {
-      "_id": "owner",
-      "scope": "Subscriptions",
-      "description": "Owner",
-      "mandatory2fa": false,
-      "name": "owner",
-      "protected": true
-    },
-    {
-      "_id": "user",
-      "scope": "Users",
-      "description": "",
-      "mandatory2fa": false,
-      "name": "user",
-      "protected": true
-    },
-    {
-      "_id": "bot",
-      "scope": "Users",
-      "description": "",
-      "mandatory2fa": false,
-      "name": "bot",
-      "protected": true
-    },
-    {
-      "_id": "app",
-      "scope": "Users",
-      "description": "",
-      "mandatory2fa": false,
-      "name": "app",
-      "protected": true
-    },
-    {
-      "_id": "guest",
-      "scope": "Users",
-      "description": "",
-      "mandatory2fa": false,
-      "name": "guest",
-      "protected": true
-    },
-    {
-      "_id": "anonymous",
-      "scope": "Users",
-      "description": "",
-      "mandatory2fa": false,
-      "name": "anonymous",
-      "protected": true
-    },
-    {
-      "_id": "livechat-agent",
-      "scope": "Users",
-      "description": "Livechat Agent",
-      "mandatory2fa": false,
-      "name": "livechat-agent",
-      "protected": true
-    },
-    {
-      "_id": "livechat-manager",
-      "scope": "Users",
-      "description": "Livechat Manager",
-      "mandatory2fa": false,
-      "name": "livechat-manager",
-      "protected": true
-    },
-    {
-      "_id": "livechat-monitor",
-      "scope": "Users",
-      "description": "",
-      "mandatory2fa": false,
-      "name": "livechat-monitor",
-      "protected": true
+      "_id": "MNPsGiFTmjSsXXQ4x",
+      "username": "teste12",
+      "emails": [
+        {
+          "address": "teste1@user.tld",
+          "verified": false
+        }
+      ],
+      "type": "user",
+      "roles": [
+        "bot",
+        "user"
+      ],
+      "status": "offline",
+      "active": true,
+      "name": "Teste",
+      "nameInsensitive": "teste"
     }
   ],
+  "count": 3,
+  "offset": 0,
+  "total": 3,
   "success": true
