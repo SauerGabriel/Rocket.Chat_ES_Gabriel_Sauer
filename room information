@@ -1,4 +1,5 @@
-# The second API Call was done, requesting this API:
+# The Second task: Get the room information via an API endpoint
+# API Call was done, requesting this API:
 
 curl -H "X-Auth-Token: O0HcAldqNR3S14H6PwK1PGExLoQ2W_GAo24htPB8pcA" \
      -H "X-User-Id: PysTx5GgxAQ9pbetr" \
